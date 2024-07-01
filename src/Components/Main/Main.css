@@ -126,12 +126,15 @@
 }
 
 .result::-webkit-scrollbar {
-    display: none; /* Chrome */
+    display: none;
+    /* Chrome */
 }
 
 .result {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .result-title {
@@ -179,7 +182,36 @@
     0% {
         background-position: -800px 0;
     }
+
     100% {
         background-position: 800px 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .main .cards {
+        flex-wrap: wrap;
+    }
+
+    .main .card {
+        width: 47%;
+    }
+
+    .main-bottom input {
+        flex: none;
+        width: 150px;
+    }
+
+    .main-bottom img {
+        width: 20px;
+    }
+
+    .search-box {
+        padding: 5px 10px;
+    }
+
+    .search-box div {
+        gap: 5px;
     }
 }
