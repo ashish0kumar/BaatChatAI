@@ -3,8 +3,8 @@ BakChat is a Generative AI chatbot built using Gemini API and Reactjs.
 
 ## Screenshots
 
-![ss1](screenshots/1.png)
-![ss2](screenshots/2.png)
+|![ss1](screenshots/1.png)|
+|![ss2](screenshots/2.png)|
 
 ## Table of Contents
 
