@@ -142,7 +142,6 @@
     align-items: center;
     gap: 20px;
     color: #fff;
-    /* border: 1px solid red; */
 }
 
 .result-data {
@@ -150,7 +149,6 @@
     align-items: start;
     gap: 20px;
     color: #e5e5e5;
-    /* border: 1px solid red; */
 }
 
 .result-data p {
