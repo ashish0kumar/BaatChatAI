@@ -1,8 +1,9 @@
 import { useContext, useState } from "react"
 import "./Sidebar.css"
-import "../../assets/assets"
-import { assets } from "../../assets/assets"
 import { Context } from "../../context/Context";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faBars, faMessage, faGear, faClockRotateLeft, faQuestion } from "@fortawesome/free-solid-svg-icons";
 
 function Sidebar() {
     const [extended, setExtended] = useState(false);
@@ -16,9 +17,9 @@ function Sidebar() {
     return (
         <div className="sidebar">
             <div className="top">
-                <img onClick={() => setExtended(prev => !prev)} className="menu" src={assets.menu_icon} alt="" />
+                <FontAwesomeIcon onClick={() => setExtended(prev => !prev)} className="menu" icon={faBars} />
                 <div onClick={() => newChat()} className="new-chat">
-                    <img src={assets.plus_icon} alt="" />
+                    <FontAwesomeIcon icon={faPlus} />
                     {extended ? <p>New Chat</p> : null}
                 </div>
                 {extended
@@ -27,7 +28,7 @@ function Sidebar() {
                         {prevPrompts.map((item, index) => {
                             return (
                                 <div onClick={() => loadPrompt(item)} className="recent-entry" key={index}>
-                                    <img src={assets.message_icon} alt="" />
+                                    <FontAwesomeIcon className="icon" icon={faMessage} />
                                     <p>{item.slice(0, 18)}...</p>
                                 </div>
                             )
@@ -36,20 +37,20 @@ function Sidebar() {
                     : null
                 }
             </div>
-            <div className="bottom">
+            {/* <div className="bottom">
                 <div className="bottom-item recent-entry">
-                    <img src={assets.question_icon} alt="" />
+                    <FontAwesomeIcon className="icon" icon={faQuestion} />
                     {extended ? <p>Help</p> : null}
                 </div>
                 <div className="bottom-item recent-entry">
-                    <img src={assets.history_icon} alt="" />
+                    <FontAwesomeIcon className="icon" icon={faClockRotateLeft} />
                     {extended ? <p>Activity</p> : null}
                 </div>
                 <div className="bottom-item recent-entry">
-                    <img src={assets.setting_icon} alt="" />
+                    <FontAwesomeIcon className="icon" icon={faGear} />
                     {extended ? <p>Settings</p> : null}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

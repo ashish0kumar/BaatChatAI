@@ -7,10 +7,15 @@
   font-family: Outfit;
 }
 
+body {
+  background-color: #18181a;
+}
+
 #root {
   min-height: 100vh;
   display: flex;
   animation: fadeIn 1.5s;
+  background-color: #18181a;
 }
 
 @keyframes fadeIn {
