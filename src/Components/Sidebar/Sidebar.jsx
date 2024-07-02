@@ -37,7 +37,7 @@ function Sidebar() {
                     : null
                 }
             </div>
-            {/* <div className="bottom">
+            <div className="bottom">
                 <div className="bottom-item recent-entry">
                     <FontAwesomeIcon className="icon" icon={faQuestion} />
                     {extended ? <p>Help</p> : null}
@@ -50,7 +50,7 @@ function Sidebar() {
                     <FontAwesomeIcon className="icon" icon={faGear} />
                     {extended ? <p>Settings</p> : null}
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
