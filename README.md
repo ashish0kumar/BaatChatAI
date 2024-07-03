@@ -1,5 +1,5 @@
 # BaatChatAI
-BaatChatAI is a Generative AI chatbot built using Gemini API and Reactjs.
+BaatChatAI leverages the powerful Gemini API to deliver intelligent, context-aware responses to user queries. Built with React and Vite, the app provides a fast and modern user interface, seamlessly storing conversation history in local storage for a continuous and engaging user experience.
 
 ## 📚 Table of Contents
 
