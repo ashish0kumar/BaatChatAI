@@ -3,7 +3,7 @@ import "./Sidebar.css"
 import { Context } from "../../context/Context";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faBars, faMessage, faGear, faClockRotateLeft, faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faBars, faMessage, faGear, faClockRotateLeft, faQuestion, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function Sidebar() {
     const [extended, setExtended] = useState(false);
@@ -24,7 +24,10 @@ function Sidebar() {
                 </div>
                 {extended
                     ? <div className="recent">
-                        <p className="recent-title">Recent</p>
+                        <div className="recent-title-container">
+                            <FontAwesomeIcon icon={faClockRotateLeft} />
+                            <p className="recent-title">Recent</p>
+                        </div>
                         <div className="recent-container">
                             {prevPrompts.map((item, index) => {
                                 return (
@@ -41,16 +44,16 @@ function Sidebar() {
             </div>
             <div className="bottom">
                 <div className="bottom-item recent-entry">
-                    <FontAwesomeIcon className="icon" icon={faQuestion} />
+                    <FontAwesomeIcon className="bottom-help-icon" icon={faQuestion} />
                     {extended ? <p>Help</p> : null}
                 </div>
                 <div className="bottom-item recent-entry">
-                    <FontAwesomeIcon className="icon" icon={faClockRotateLeft} />
-                    {extended ? <p>Activity</p> : null}
+                    <FontAwesomeIcon className="bottom-icon" icon={faGear} />
+                    {extended ? <p>Settings</p> : null}
                 </div>
                 <div className="bottom-item recent-entry">
-                    <FontAwesomeIcon className="icon" icon={faGear} />
-                    {extended ? <p>Settings</p> : null}
+                    <FontAwesomeIcon className="bottom-icon" icon={faTrash} />
+                    {extended ? <p>Clear chat</p> : null}
                 </div>
             </div>
         </div>

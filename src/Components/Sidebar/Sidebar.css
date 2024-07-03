@@ -16,7 +16,7 @@
     display: block;
     margin-left: 15px;
     cursor: pointer;
-    color: #9ca3af;
+    color: #e5e5e5;
     font-size: 20px;
 }
 
@@ -31,7 +31,7 @@
     border: 1px solid #27272a;
     border-radius: 5px;
     font-size: 14px;
-    color: grey;
+    color: #e5e5e5;
     cursor: pointer;
 }
 
@@ -41,9 +41,22 @@
     animation: fadeIn 1.5s;
 }
 
-.sidebar .recent-title {
-    margin: 0 0 10px 5px;
-    color: #9ca3af;
+.recent-title-container {
+    margin: 0 0 15px 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    color: #e5e5e5;
+}
+
+.recent-title-container button {
+    background-color: #18181a;
+    border: 1px solid #27272a;
+    color: grey;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 .sidebar .recent-container {
@@ -74,6 +87,7 @@
 .sidebar .bottom-item {
     display: flex;
     padding-right: 10px;
+    color: #e5e5e5;
     cursor: pointer;
 }
 
@@ -81,6 +95,13 @@
     margin-top: 5px;
 }
 
+.bottom-icon {
+    margin-top: 3px;
+}
+
+.bottom-help-icon {
+    margin: 3px 5px 0 1px;
+}
 
 @media (max-width: 600px) {
     .sidebar {
