@@ -15,17 +15,6 @@ const ContextProvider = (props) => {
     const [loading, setLoading] = useState(false);
     const [resultData, setResultData] = useState("");
 
-    useEffect(() => {
-        const savedPrompts = localStorage.getItem("prevPrompts");
-        if (savedPrompts) {
-            setPrevPrompts(JSON.parse(savedPrompts));
-        }
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem("prevPrompts", JSON.stringify(prevPrompts));
-    }, [prevPrompts]);
-
     const delaypara = (index, nextWord) => {
         setTimeout(function() {
             setResultData(prev => prev + nextWord);
