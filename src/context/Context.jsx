@@ -76,6 +76,11 @@ const ContextProvider = (props) => {
         setInput("");
     }
 
+    const clearChatHistory = () => {
+        localStorage.removeItem("prevPrompts");
+        setPrevPrompts([]);
+    };
+
     const contextValue = {
         prevPrompts,
         setPrevPrompts,
@@ -87,7 +92,8 @@ const ContextProvider = (props) => {
         resultData,
         input,
         setInput,
-        newChat
+        newChat,
+        clearChatHistory
     }
 
     return (

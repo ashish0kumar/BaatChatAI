@@ -7,7 +7,7 @@ import { faPlus, faBars, faMessage, faGear, faClockRotateLeft, faQuestion, faTra
 
 function Sidebar() {
     const [extended, setExtended] = useState(false);
-    const { onSent, prevPrompts, setRecentPrompt, newChat } = useContext(Context);
+    const { onSent, prevPrompts, setRecentPrompt, newChat, clearChatHistory } = useContext(Context);
 
     const loadPrompt = async (prompt) => {
         setRecentPrompt(prompt);
@@ -43,7 +43,7 @@ function Sidebar() {
                 }
             </div>
             <div className="bottom">
-                <div className="bottom-item recent-entry">
+                <div onClick={() => window.location.href = "https://github.com/ashish0kumar/BakChat"} className="bottom-item recent-entry">
                     <FontAwesomeIcon className="bottom-help-icon" icon={faQuestion} />
                     {extended ? <p>Help</p> : null}
                 </div>
@@ -51,7 +51,7 @@ function Sidebar() {
                     <FontAwesomeIcon className="bottom-icon" icon={faGear} />
                     {extended ? <p>Settings</p> : null}
                 </div>
-                <div className="bottom-item recent-entry">
+                <div onClick={clearChatHistory} className="bottom-item recent-entry">
                     <FontAwesomeIcon className="bottom-icon" icon={faTrash} />
                     {extended ? <p>Clear chat</p> : null}
                 </div>
