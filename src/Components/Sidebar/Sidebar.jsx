@@ -25,14 +25,16 @@ function Sidebar() {
                 {extended
                     ? <div className="recent">
                         <p className="recent-title">Recent</p>
-                        {prevPrompts.map((item, index) => {
-                            return (
-                                <div onClick={() => loadPrompt(item)} className="recent-entry" key={index}>
-                                    <FontAwesomeIcon className="icon" icon={faMessage} />
-                                    <p>{item.slice(0, 18)}...</p>
-                                </div>
-                            )
-                        })}
+                        <div className="recent-container">
+                            {prevPrompts.map((item, index) => {
+                                return (
+                                    <div onClick={() => loadPrompt(item)} className="recent-entry" key={index}>
+                                        <FontAwesomeIcon className="icon" icon={faMessage} />
+                                        <p>{item.slice(0, 18)}...</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
                     : null
                 }

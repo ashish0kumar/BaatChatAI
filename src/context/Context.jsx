@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import run from "../config/gemini";
 
 export const Context = createContext();
@@ -7,10 +7,24 @@ const ContextProvider = (props) => {
 
     const [input, setInput] = useState("");
     const [recentPrompt, setRecentPrompt] = useState("");
-    const [prevPrompts, setPrevPrompts] = useState([]);
+    const [prevPrompts, setPrevPrompts] = useState(() => {
+        const savedPrompts = localStorage.getItem("prevPrompts");
+        return savedPrompts ? JSON.parse(savedPrompts) : [];
+    });
     const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
     const [resultData, setResultData] = useState("");
+
+    useEffect(() => {
+        const savedPrompts = localStorage.getItem("prevPrompts");
+        if (savedPrompts) {
+            setPrevPrompts(JSON.parse(savedPrompts));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("prevPrompts", JSON.stringify(prevPrompts));
+    }, [prevPrompts]);
 
     const delaypara = (index, nextWord) => {
         setTimeout(function() {
