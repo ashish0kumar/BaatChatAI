@@ -1,5 +1,5 @@
-# BakChat
-BakChat is a Generative AI chatbot built using Gemini API and Reactjs.
+# BaatChatAI
+BaatChatAI is a Generative AI chatbot built using Gemini API and Reactjs.
 
 ## 📚 Table of Contents
 
@@ -32,8 +32,8 @@ BakChat is a Generative AI chatbot built using Gemini API and Reactjs.
 To get started with this project, clone the repository and install the necessary dependencies:
 
 ```bash
-git clone https://github.com/ashish0kumar/BakChat.git
-cd BakChat
+git clone https://github.com/ashish0kumar/BaatChatAI.git
+cd BaatChatAI
 npm install
 ```
 
