@@ -11,7 +11,7 @@ BakChat is a Generative AI chatbot built using Gemini API and Reactjs.
 - 🤝 [Contributing](#contributing)
 - 📜 [License](#license)
 
-## 📷 Screenshots
+## 📸 Screenshots
 
 ![ss1](screenshots/1.png)
 <br/><br/>
@@ -20,12 +20,11 @@ BakChat is a Generative AI chatbot built using Gemini API and Reactjs.
 ## ✨ Features
 
 - 🤖 AI-Powered Responses: The app uses the Gemini API to provide intelligent and context-aware answers to user questions.
-- 💬 Conversation History: Previous prompts and responses are stored in localStorage, allowing users to view and continue past conversations.
+- 💬 Conversation History: Previous prompts and responses are stored in localStorage, allowing users to view, continue and delete past conversations.
 - 🖥️ User-Friendly Interface: A clean and modern UI built with React, making it easy to interact with the AI.
 - ⚡ Fast and Responsive: Built using Vite, ensuring quick load times and a smooth user experience.
 - 🔒 Secure API Integration: Environment variables are used to securely manage API keys and other sensitive data.
 - 🌐 Real-Time Communication: The app provides real-time responses, making the interaction feel immediate and engaging.
-- 📚 Session Management: Users can manage their session history, clear past conversations, and start new ones.
 - 🔄 Automatic Updates: The app automatically updates the conversation as new responses are received from the API.
 
 ## 📥 Installation
