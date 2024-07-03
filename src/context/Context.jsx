@@ -16,21 +16,19 @@ const ContextProvider = (props) => {
     const [resultData, setResultData] = useState("");
 
     useEffect(() => {
-        const savedPrompts = localStorage.getItem("prevPrompts");
-        if (savedPrompts) {
-            setPrevPrompts(JSON.parse(savedPrompts));
-        }
+        const storedPrompts = JSON.parse(localStorage.getItem("prevPrompts")) || [];
+        setPrevPrompts(storedPrompts);
     }, []);
 
     useEffect(() => {
         localStorage.setItem("prevPrompts", JSON.stringify(prevPrompts));
     }, [prevPrompts]);
 
-    const delaypara = (index, nextWord) => {
-        setTimeout(function() {
-            setResultData(prev => prev + nextWord);
-        }, 45*index);
-    }
+    // const delaypara = (index, nextWord) => {
+    //     setTimeout(function() {
+    //         setResultData(prev => prev + nextWord);
+    //     }, 45*index);
+    // }
 
     const newChat = () => {
         setLoading(false);
@@ -62,12 +60,13 @@ const ContextProvider = (props) => {
             }
         }
         let newResponse2 = newResponse.split("*").join("<br />");
-        let newResponseArray = newResponse2.split(" ");
-        for (let i = 0; i < newResponseArray.length; i++) {
-            const nextWord = newResponseArray[i];
-            delaypara(i, nextWord+" ");
-        }
+        // let newResponseArray = newResponse2.split(" ");
+        // for (let i = 0; i < newResponseArray.length; i++) {
+        //     const nextWord = newResponseArray[i];
+        //     delaypara(i, nextWord+" ");
+        // }
         
+        setResultData(newResponse2);
         setLoading(false);
         setInput("");
     }

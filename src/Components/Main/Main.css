@@ -155,6 +155,7 @@
     font-size: 15px;
     line-height: 1.8;
     font-weight: 300;
+    animation: fadeIn 1.5s;
 }
 
 .icon {
