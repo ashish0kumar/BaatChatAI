@@ -204,12 +204,11 @@
     }
 
     .main-bottom {
-        width: 350px;
+        width: 90%;
     }
 
     .main-bottom input {
         flex: none;
-        width: 150px;
     }
 
     .main-bottom img {
