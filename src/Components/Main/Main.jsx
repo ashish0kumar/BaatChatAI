@@ -19,7 +19,7 @@ function Main() {
     return (
         <div className="main">
             <div className="nav">
-                <p>बकChat</p>
+                <p>बातChatAI</p>
                 <FontAwesomeIcon className="icon" icon={faUser} />
             </div>
             <div className="main-container">
