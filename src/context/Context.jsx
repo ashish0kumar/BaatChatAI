@@ -1,7 +1,10 @@
 import { createContext, useState, useEffect } from "react";
+import DOMPurify from "dompurify";
 import run from "../config/gemini";
 
 export const Context = createContext();
+
+const MAX_ENTRIES = 50;
 
 const ContextProvider = (props) => {
 
@@ -24,6 +27,10 @@ const ContextProvider = (props) => {
         localStorage.setItem("prevPrompts", JSON.stringify(prevPrompts));
     }, [prevPrompts]);
 
+    const sanitizeData = (data) => {
+        return DOMPurify.sanitize(data);
+    }
+
     const newChat = () => {
         setLoading(false);
         setShowResult(false);
@@ -35,16 +42,25 @@ const ContextProvider = (props) => {
         setShowResult(true);
 
         let response;
+        let sanitizedPrompt = prompt ? sanitizeData(prompt) : sanitizeData(input);
+
         if (prompt !== undefined) {
-            response = await run(prompt);
-            setRecentPrompt(prompt);
+            response = await run(sanitizedPrompt);
+            setRecentPrompt(sanitizedPrompt);
         } else {
-            setPrevPrompts(prev => [...prev, input]);
-            setRecentPrompt(input);
-            response = await run(input);
+            setPrevPrompts(prev => {
+                const newPrompts = [...prev, sanitizedPrompt];
+                if (newPrompts.length > MAX_ENTRIES) {
+                    newPrompts.shift();
+                }
+                return newPrompts;
+            });
+            setRecentPrompt(sanitizedPrompt);
+            response = await run(sanitizedPrompt);
         }
 
-        let responseArray = response.split("**");
+        let sanitizedResponse = sanitizeData(response);
+        let responseArray = sanitizedResponse.split("**");
         let newResponse = "";
         for (let i = 0; i < responseArray.length; i++) {
             if (i === 0 || i % 2 !== 1) {
