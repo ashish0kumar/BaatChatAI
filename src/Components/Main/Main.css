@@ -204,10 +204,12 @@
     }
 
     .main-bottom {
+        position: fixed;
         width: 90%;
     }
 
     .main-bottom input {
+        width: 80%;
         flex: none;
     }
 
