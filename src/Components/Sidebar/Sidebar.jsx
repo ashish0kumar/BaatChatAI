@@ -51,7 +51,7 @@ function Sidebar() {
                     <FontAwesomeIcon className="bottom-icon" icon={faGear} />
                     {extended ? <p>Settings</p> : null}
                 </div>
-                <div onClick={clearChatHistory} className="bottom-item recent-entry">
+                <div onClick={() => { clearChatHistory(); newChat(); }} className="bottom-item recent-entry">
                     <FontAwesomeIcon className="bottom-icon" icon={faTrash} />
                     {extended ? <p>Clear chat</p> : null}
                 </div>
