@@ -73,7 +73,7 @@ function Main() {
                         </div>
                     </div>
                     <p className="bottom-info">
-                        बकChat may display inaccurate info.
+                        बातChat may display inaccurate info.
                     </p>
                 </div>
             </div>
